@@ -37,6 +37,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - run: pip3 install -U -r requirements.txt
+      - run: mkdocs gh-deploy --force
+
         # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write      # to deploy to Pages
